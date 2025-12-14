@@ -1,378 +1,229 @@
-# 📚 ÍNDICE DE DOCUMENTACIÓN - REESTRUCTURACIÓN FRONTEND
+# 🍗 Food Control POS - Sistema de Gestión de Ventas
 
-## 🚀 POR DÓNDE EMPEZAR
+> Sistema de punto de venta (POS) moderno desarrollado con React para gestión integral de rotiserías y restaurantes
 
-Si estás viendo esto por primera vez, **LEE EN ESTE ORDEN:**
-
-1. **[INSTALACION.md](#instalacionmd)** → Instala dependencias y arranca el proyecto
-2. **[RESUMEN-COMPLETO.md](#resumen-completomd)** → Visión general de TODO lo que cambió
-3. **[ANTES-DESPUES.md](#antes-despuesmd)** → Comparación código viejo vs nuevo
-4. **[DIAGRAMAS.md](#diagramasmd)** → Flujos visuales de cómo funciona todo
-5. **[COMO-PROBAR.md](#como-probarmd)** → Testing y verificación
-6. **[REESTRUCTURACION.md](#reestructuracionmd)** → Conceptos técnicos detallados
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
+[![Zustand](https://img.shields.io/badge/Zustand-State-orange)](https://github.com/pmndrs/zustand)
+[![React Query](https://img.shields.io/badge/React_Query-Cache-FF4154)](https://tanstack.com/query/latest)
 
 ---
 
-## 📄 DESCRIPCIÓN DE CADA ARCHIVO
+## 📋 Sobre el Proyecto
 
-### INSTALACION.md
-**📦 Instalación y Puesta en Marcha**
+**Food Control POS** es una aplicación web frontend desarrollada con **React 18** y arquitectura moderna, diseñada para simplificar la gestión de ventas, inventario y empleados en negocios gastronómicos.
 
-- ✅ Paso a paso para instalar dependencias
-- ✅ Cómo iniciar backend y frontend
-- ✅ Verificación de que todo funciona
-- ✅ Troubleshooting de errores comunes
-- ✅ Checklist final
-
-**Cuándo leer:** PRIMERO, antes que nada
-
-**Tiempo de lectura:** 10 minutos
+Este proyecto implementa las mejores prácticas de desarrollo frontend moderno con una arquitectura escalable basada en features.
 
 ---
 
-### RESUMEN-COMPLETO.md
-**📋 Resumen Ejecutivo**
+## ✨ Características Principales
 
-- ✅ Lista de TODOS los archivos creados
-- ✅ Explicación de cada archivo
-- ✅ Estructura final del proyecto
-- ✅ Flujo de login nuevo
-- ✅ Ventajas reales de la migración
-- ✅ Métricas de mejora
-- ✅ Cómo usar en tus componentes
-- ✅ Próximos pasos
+### 🔐 Autenticación y Roles
+- ✅ Login seguro con validación de credenciales
+- ✅ Sistema de roles (Administrador / Empleado)
+- ✅ Permisos diferenciados por rol
+- ✅ Selección de sucursal para empleados
 
-**Cuándo leer:** Después de instalar, para entender TODO
+### 📦 Gestión de Productos
+- ✅ CRUD completo de productos
+- ✅ Importación masiva desde Excel
+- ✅ Categorización y asociación con proveedores
+- ✅ Control de stock por sucursal
 
-**Tiempo de lectura:** 15 minutos
+### 🛒 Sistema de Ventas
+- ✅ Carrito de compras interactivo
+- ✅ Múltiples métodos de pago
+- ✅ Registro de ventas por empleado
+- ✅ Historial completo de transacciones
 
----
-
-### ANTES-DESPUES.md
-**🔄 Comparación Detallada**
-
-- ✅ Código viejo vs código nuevo (línea por línea)
-- ✅ Arquitectura Flat vs Feature-based
-- ✅ Flujo de datos ANTES y AHORA
-- ✅ Explicación de Hooks personalizados
-- ✅ Beneficios reales con ejemplos
-- ✅ Métricas de mejora (tabla comparativa)
-
-**Cuándo leer:** Para entender POR QUÉ cambiamos
-
-**Tiempo de lectura:** 20 minutos
+### 👥 Administración
+- ✅ Gestión de empleados y permisos
+- ✅ Control de categorías y proveedores
+- ✅ Administración de sucursales
+- ✅ WebSocket para actualizaciones en tiempo real
 
 ---
 
-### DIAGRAMAS.md
-**📐 Flujos Visuales**
+## 📸 Capturas de Pantalla
 
-- ✅ Diagramas ASCII de arquitectura
-- ✅ Flujo de login paso a paso
-- ✅ Cómo funciona Zustand + React Query
-- ✅ Diagrama de cache de React Query
-- ✅ Diagrama de persist de Zustand
-- ✅ Diagrama de interceptors de Axios
-- ✅ Timeline de ciclo de vida de petición
+### 🔐 Pantalla de Login
+![Login](./screenshots/login.png)
+*Sistema de autenticación con selección de sucursal y roles*
 
-**Cuándo leer:** Si eres visual, después del RESUMEN
+### 📊 Dashboard - Gestión de Ventas
+![Dashboard Ventas](./screenshots/dashboard-ventas.png)
+*Vista principal del sistema de ventas con carrito interactivo*
 
-**Tiempo de lectura:** 15 minutos
-
----
-
-### COMO-PROBAR.md
-**🧪 Testing y Verificación**
-
-- ✅ Cómo probar el login
-- ✅ Cómo verificar Zustand
-- ✅ Cómo verificar React Query
-- ✅ Cómo verificar interceptores
-- ✅ Cómo probar manejo de errores
-- ✅ Cómo usar DevTools
-- ✅ Debugging tips
-- ✅ Qué hacer si algo no funciona
-
-**Cuándo leer:** Después de instalar, para verificar
-
-**Tiempo de lectura:** 15 minutos
+### 📦 Administración de Productos
+![Productos](./screenshots/admin-productos.png)
+*Gestión completa de productos con importación Excel*
 
 ---
 
-### REESTRUCTURACION.md
-**🏗️ Documentación Técnica**
+## 🛠️ Stack Tecnológico
 
-- ✅ Nueva estructura de carpetas
-- ✅ Qué hicimos hasta ahora
-- ✅ Próximos pasos (10 pasos)
-- ✅ Conceptos clave:
-  - Feature-based architecture
-  - Zustand vs sessionStorage
-  - React Query vs useEffect + axios
-- ✅ Recursos externos
+### Core
+- **React 18** - Librería UI con hooks modernos
+- **Vite 5** - Build tool ultra-rápido
+- **React Router 6** - Enrutamiento SPA
 
-**Cuándo leer:** Si quieres entender conceptos en profundidad
+### Estado y Datos
+- **Zustand** - Estado global reactivo con persistencia
+- **React Query (TanStack Query)** - Cache inteligente y sincronización
+- **Axios** - Cliente HTTP con interceptores
 
-**Tiempo de lectura:** 20 minutos
+### UI/UX
+- **React Bootstrap** - Componentes UI responsivos
+- **SweetAlert2** - Alertas y notificaciones elegantes
+- **Socket.IO Client** - WebSocket para tiempo real
 
 ---
 
-## 🗺️ MAPA DE NAVEGACIÓN
+## ⚡ Instalación Rápida
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/DanielCostella/GestorVentasApp.git
+cd GestorVentasApp
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Iniciar en desarrollo
+npm run dev
+
+# 4. Abrir navegador
+# http://localhost:5173
+```
+
+### Prerrequisitos
+- Node.js 16.x o superior
+- Backend API corriendo en `http://localhost:8000`
+
+---
+
+## 📁 Estructura del Proyecto
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                  ¿POR DÓNDE EMPEZAR?                    │
-└─────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-              ┌────────────────────────┐
-              │   INSTALACION.md       │
-              │   (10 min)             │
-              └────────┬───────────────┘
-                       │
-                       ▼
-              ┌────────────────────────┐
-              │   RESUMEN-COMPLETO.md  │
-              │   (15 min)             │
-              └────────┬───────────────┘
-                       │
-          ┌────────────┼────────────┐
-          │                         │
-          ▼                         ▼
-┌──────────────────┐      ┌──────────────────┐
-│ ANTES-DESPUES.md │      │   DIAGRAMAS.md   │
-│ (20 min)         │      │   (15 min)       │
-│ Para entender    │      │ Para visuales    │
-│ POR QUÉ          │      │                  │
-└────────┬─────────┘      └────────┬─────────┘
-         │                         │
-         └─────────────┬───────────┘
-                       │
-                       ▼
-              ┌────────────────────────┐
-              │   COMO-PROBAR.md       │
-              │   (15 min)             │
-              │   Testing              │
-              └────────┬───────────────┘
-                       │
-                       ▼
-              ┌────────────────────────┐
-              │ REESTRUCTURACION.md    │
-              │ (20 min - OPCIONAL)    │
-              │ Conceptos profundos    │
-              └────────────────────────┘
+Frontend/
+├── src/
+│   ├── features/              # Organización por funcionalidad
+│   │   ├── auth/             # Autenticación
+│   │   ├── productos/        # Gestión de productos
+│   │   ├── ventas/           # Sistema de ventas
+│   │   └── ...               # Otras features
+│   │
+│   ├── stores/               # Estado global (Zustand)
+│   ├── lib/                  # Configuraciones (Axios, React Query)
+│   ├── Components/           # Componentes reutilizables
+│   └── Pages/                # Páginas principales
+│
+├── public/                   # Recursos estáticos
+└── README.md
+```
+
+**Arquitectura Feature-Based:**
+Cada feature contiene:
+- `api/` - Llamadas HTTP
+- `hooks/` - Custom hooks
+- `components/` - Componentes específicos
+
+---
+
+## 🎯 Scripts Disponibles
+
+```bash
+npm run dev          # Desarrollo (puerto 5173)
+npm run build        # Build de producción
+npm run preview      # Preview del build
+npm run lint         # Linting de código
 ```
 
 ---
 
-## 🎯 GUÍAS RÁPIDAS
+## 🔒 Roles y Permisos
 
-### ⚡ "Solo quiero que funcione" (15 min)
-1. [INSTALACION.md](#instalacionmd) → Instala y arranca
-2. [COMO-PROBAR.md](#como-probarmd) → Verifica que funciona
-3. ✅ LISTO
-
-### 📚 "Quiero entender todo" (1 hora)
-1. [INSTALACION.md](#instalacionmd)
-2. [RESUMEN-COMPLETO.md](#resumen-completomd)
-3. [ANTES-DESPUES.md](#antes-despuesmd)
-4. [DIAGRAMAS.md](#diagramasmd)
-5. [COMO-PROBAR.md](#como-probarmd)
-6. [REESTRUCTURACION.md](#reestructuracionmd)
-7. ✅ EXPERTO
-
-### 🎨 "Soy visual, dame diagramas" (30 min)
-1. [INSTALACION.md](#instalacionmd)
-2. [DIAGRAMAS.md](#diagramasmd)
-3. [COMO-PROBAR.md](#como-probarmd)
-4. ✅ ENTENDIDO
-
-### 🐛 "Algo no funciona" (10 min)
-1. [INSTALACION.md](#instalacionmd) → Sección Troubleshooting
-2. [COMO-PROBAR.md](#como-probarmd) → Sección "Si algo no funciona"
-3. ✅ RESUELTO
+| Funcionalidad | Admin | Empleado |
+|--------------|-------|----------|
+| Ver productos | ✅ | ✅ |
+| Gestionar productos | ✅ | ❌ |
+| Realizar ventas | ✅ | ✅ |
+| Ver todas las sucursales | ✅ | ❌ |
+| Gestionar empleados | ✅ | ❌ |
+| Importar Excel | ✅ | ❌ |
 
 ---
 
-## 📁 ARCHIVOS TÉCNICOS (CÓDIGO)
+## 📦 Dependencias Principales
 
-### `src/stores/authStore.js`
-**Estado global de autenticación con Zustand**
-- Maneja empleado y sucursal
-- Persiste automáticamente en sessionStorage
-- Métodos: login(), logout(), updateEmpleado(), etc.
-
-### `src/lib/queryClient.js`
-**Configuración de React Query**
-- staleTime: 5 minutos
-- cacheTime: 10 minutos
-- retry: 3 intentos
-
-### `src/lib/apiClient.js`
-**Cliente Axios con interceptores**
-- baseURL: http://localhost:8000
-- Interceptores de request/response
-- Manejo de errores global
-
-### `src/features/auth/api/authApi.js`
-**Funciones de API de autenticación**
-- loginUser()
-- logoutUser()
-- registerUser()
-
-### `src/features/auth/hooks/useAuth.js`
-**Hook de autenticación**
-- Combina Zustand + React Query
-- Exporta empleado, sucursal, login(), logout()
-
-### `src/features/auth/components/FormLogin.jsx`
-**Componente de login migrado**
-- Usa useAuth() y useSucursales()
-- Código limpio y reactivo
-
-### `src/features/sucursales/api/sucursalesApi.js`
-**API de sucursales**
-- getSucursales()
-
-### `src/features/sucursales/hooks/useSucursales.js`
-**Hook de sucursales**
-- useQuery con cache de 10 minutos
-
----
-
-## 📊 ESTADÍSTICAS DEL PROYECTO
-
-```
-┌─────────────────────────────────────────────┐
-│            ARCHIVOS CREADOS                 │
-├─────────────────────────────────────────────┤
-│  Documentación:           6 archivos        │
-│  Código (stores):         1 archivo         │
-│  Código (lib):            2 archivos        │
-│  Código (features/auth):  3 archivos        │
-│  Código (features/suc):   2 archivos        │
-│  Configuración:           2 archivos        │
-│  Backend modificado:      1 archivo         │
-├─────────────────────────────────────────────┤
-│  TOTAL:                   17 archivos       │
-├─────────────────────────────────────────────┤
-│  Líneas de documentación: ~2500 líneas     │
-│  Líneas de código:        ~500 líneas      │
-└─────────────────────────────────────────────┘
+```json
+{
+  "react": "^18.3.1",
+  "react-router-dom": "^6.x",
+  "zustand": "^5.0.3",
+  "@tanstack/react-query": "^5.71.0",
+  "axios": "^1.7.9",
+  "react-bootstrap": "^2.10.6",
+  "sweetalert2": "^11.15.2"
+}
 ```
 
 ---
 
-## 🔍 BÚSQUEDA RÁPIDA
+## 🏗️ Arquitectura Moderna
 
-### "¿Cómo instalo esto?"
-→ [INSTALACION.md](#instalacionmd)
+### Estado Global con Zustand
+```javascript
+import { useAuthStore } from '@/stores/authStore'
 
-### "¿Qué cambió?"
-→ [RESUMEN-COMPLETO.md](#resumen-completomd)
+const { empleado, login, logout } = useAuthStore()
+```
 
-### "¿Por qué cambiamos?"
-→ [ANTES-DESPUES.md](#antes-despuesmd)
+### Server State con React Query
+```javascript
+import { useProductos } from '@/features/productos/hooks/useProductos'
 
-### "¿Cómo funciona Zustand?"
-→ [DIAGRAMAS.md](#diagramasmd) → Sección "Zustand Persist"
-
-### "¿Cómo funciona React Query?"
-→ [DIAGRAMAS.md](#diagramasmd) → Sección "React Query Cache"
-
-### "¿Cómo uso useAuth()?"
-→ [RESUMEN-COMPLETO.md](#resumen-completomd) → Sección "Cómo usar en otros componentes"
-
-### "¿Cómo pruebo que funciona?"
-→ [COMO-PROBAR.md](#como-probarmd)
-
-### "Algo no funciona"
-→ [INSTALACION.md](#instalacionmd) → Troubleshooting
-
-### "¿Cuáles son los próximos pasos?"
-→ [RESUMEN-COMPLETO.md](#resumen-completomd) → Sección "Próximos pasos"
+const { data, isLoading } = useProductos()
+```
 
 ---
 
-## 🎓 CONCEPTOS CLAVE
+## 🤝 Contribuir
 
-### Zustand
-- **Qué es:** State management reactivo
-- **Reemplaza:** sessionStorage + Context
-- **Dónde leer:** [REESTRUCTURACION.md](#reestructuracionmd) → "Zustand vs sessionStorage"
+¡Las contribuciones son bienvenidas!
 
-### React Query
-- **Qué es:** Server state management con cache
-- **Reemplaza:** useEffect + axios manual
-- **Dónde leer:** [REESTRUCTURACION.md](#reestructuracionmd) → "React Query vs useEffect"
-
-### Feature-based Architecture
-- **Qué es:** Organizar código por funcionalidad
-- **Reemplaza:** Estructura flat por tipo
-- **Dónde leer:** [REESTRUCTURACION.md](#reestructuracionmd) → "Feature-based Architecture"
-
-### Axios Interceptors
-- **Qué es:** Middleware para peticiones HTTP
-- **Propósito:** Logging y manejo de errores global
-- **Dónde leer:** [DIAGRAMAS.md](#diagramasmd) → "Axios Interceptors"
+1. Fork el proyecto
+2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add: nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
 ---
 
-## 📞 SOPORTE
+## 📝 Roadmap
 
-Si después de leer toda la documentación aún tienes dudas:
-
-1. ✅ Verifica que leíste [INSTALACION.md](#instalacionmd)
-2. ✅ Verifica que leíste [COMO-PROBAR.md](#como-probarmd)
-3. ✅ Verifica el troubleshooting en ambos archivos
-4. ✅ Abre la consola del navegador (F12) y busca errores
-5. ✅ Pregunta con el error específico
+- [ ] Modo oscuro
+- [ ] PWA (Progressive Web App)
+- [ ] Reportes en PDF
+- [ ] Tests unitarios
+- [ ] Multi-idioma (i18n)
 
 ---
 
-## ✅ CHECKLIST DE LECTURA
+## 👨‍💻 Autor
 
-Marca lo que ya leíste:
+**Daniel Costella**
 
-- [ ] INSTALACION.md
-- [ ] RESUMEN-COMPLETO.md
-- [ ] ANTES-DESPUES.md
-- [ ] DIAGRAMAS.md
-- [ ] COMO-PROBAR.md
-- [ ] REESTRUCTURACION.md
-- [ ] README.md (este archivo)
+[![GitHub](https://img.shields.io/badge/GitHub-DanielCostella-181717?logo=github)](https://github.com/DanielCostella)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Daniel_Costella-0A66C2?logo=linkedin)](https://linkedin.com/in/danielcostella)
 
 ---
 
-## 🎉 CONCLUSIÓN
+## 📄 Licencia
 
-Esta documentación cubre:
-
-✅ **Instalación** → Cómo arrancar el proyecto
-✅ **Resumen** → Qué cambió y por qué
-✅ **Comparación** → Código viejo vs nuevo
-✅ **Diagramas** → Flujos visuales
-✅ **Testing** → Cómo verificar que funciona
-✅ **Conceptos** → Teoría en profundidad
-
-**RESULTADO:** Tienes TODO lo necesario para entender y usar la nueva arquitectura.
+Este proyecto está bajo la Licencia MIT.
 
 ---
 
-## 📚 RECURSOS EXTERNOS
-
-- [Zustand Docs](https://github.com/pmndrs/zustand)
-- [TanStack Query Docs](https://tanstack.com/query/latest)
-- [Feature-Sliced Design](https://feature-sliced.design/)
-- [Axios Docs](https://axios-http.com/)
-
----
-
-## 🚀 EMPECEMOS
-
-**Si es tu primera vez aquí:**
-
-1. Ve a [INSTALACION.md](./INSTALACION.md)
-2. Sigue los pasos
-3. ¡Disfruta de la nueva arquitectura!
-
+⭐ **Si este proyecto te resultó útil, ¡considera darle una estrella!**
