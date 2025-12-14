@@ -1,4 +1,4 @@
-import { FormLogin } from "../Components/FormLogin"
+import { FormLogin } from "@/features/auth/components/FormLogin"
 
 export const Login = () => {
   return (

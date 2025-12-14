@@ -122,10 +122,6 @@ export const BotonEditarProducto = ({id}) => {
                 }
               </Form.Select>
             </Form.Group>
-            <Form.Group controlId="img" className='mb-3'>
-              <Form.Label>Imagen Producto</Form.Label>
-              <Form.Control defaultValue={productoEspecifico.Imagen} {...register("imagen")} name='imagen' type="url" />
-            </Form.Group>
             <Form.Group controlId="price" className='mb-3'>
               <Form.Label>Precio</Form.Label>
               <Form.Control defaultValue={productoEspecifico.Precio} {...register("precio")} name='precio' type='text'/>

@@ -5,31 +5,19 @@
 }
 .footer {
     text-align: center;
-    height: 250px;
-    background:linear-gradient(#ffffff,rgb(50, 91, 255));
-    justify-content: space-between;
-    align-items: center;
-    padding: 200px;
+    background: linear-gradient(#ffffff, rgb(50, 91, 255));
+    padding: 20px;
     font-family: sans-serif;
     font-size: larger;
-    font-style: oblique;
     border: 1px solid black;
-}
-
-
-.http {
-    text-align: center;
-    height: 200px;    
-    align-items: center;
-    padding: 10px;
-    font-family: sans-serif;
-    font-size: larger;
-    font-style: oblique;
-    
+    margin-top: 400px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .copy{
   text-align: center;
-  position: relative;
-  left: 345px;
+  color: white;
+  font-weight: bold;
 }

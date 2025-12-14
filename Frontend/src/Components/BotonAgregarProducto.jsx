@@ -17,7 +17,7 @@ export const BotonAgregarProducto = () => {
     categoria: 0,
     proveedor: 0,
     nombre: '',
-    imagen: '',
+    imagen: 'https://via.placeholder.com/150?text=Producto',
     precio: 0
   }
 
@@ -77,7 +77,7 @@ export const BotonAgregarProducto = () => {
 
   return (
     <>
-      <Button className="boton_agregar mb-4 mx-4" variant="primary" onClick={handleShow}>
+      <Button className="boton_agregar" variant="primary" onClick={handleShow}>
         Agregar Producto
       </Button>
 
@@ -108,10 +108,6 @@ export const BotonAgregarProducto = () => {
                   <option key={proveedor.id_Proveedor} value={proveedor.id_Proveedor}>{proveedor.Proveedor}</option>
                 ))}
               </Form.Select>
-            </Form.Group>
-            <Form.Group controlId="img" className='mb-3'>
-              <Form.Label>Imagen Producto</Form.Label>
-              <Form.Control type="url" name='imagen' onChange={handleChange} required />
             </Form.Group>
             <Form.Group controlId="price" className='mb-3'>
               <Form.Label>Precio</Form.Label>

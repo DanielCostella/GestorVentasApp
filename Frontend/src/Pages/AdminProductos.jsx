@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { TablaProductos } from '../Components/TablaProductos'
 import { BotonAgregarProducto } from '../Components/BotonAgregarProducto'
+import { BotonImportarProductos } from '../Components/BotonImportarProductos'
 import { Filtro } from '../Components/Filtro'
 import { NavbarPagina } from './../Components/NavbarPagina';
 import { Footer } from './../Components/Footer';
@@ -19,6 +20,7 @@ export const AdminProductos = () => {
   const productosFiltrados = productos.filter(producto => producto.Nombre.toLowerCase().includes(busqueda))
 
   let idEmpleado = sessionStorage.getItem('idEmpleado');
+  let rolEmpleado = sessionStorage.getItem('rolEmpleado');
 
   useEffect(() => {
     if(idEmpleado) {
@@ -36,15 +38,17 @@ export const AdminProductos = () => {
   }, [])
 
   useEffect(() => {
-    if(!idEmpleado || (idEmpleado && empleado.Rol === "Empleado")) navigate("/", { replace: true })
-  }, [empleado.Rol])
+    if(!idEmpleado || (idEmpleado && rolEmpleado === "Empleado")) navigate("/", { replace: true })
+  }, [rolEmpleado])
   
   return (
     <>
       <NavbarPagina />
-      <h2 className='text-center mt-4'>Administración de Productos</h2>
-      <BotonAgregarProducto />
-      <Filtro busqueda = {busqueda} setBusqueda={setBusqueda}/>
+      <h2 className='text-center mt-5 mb-5'>Administración de Productos</h2>
+      <div className="d-flex justify-content-start align-items-center gap-3 mb-4 px-3">
+        <BotonAgregarProducto />
+        {rolEmpleado === "Administrador" && <BotonImportarProductos />}
+      </div>
       <TablaProductos productos = {productosFiltrados} setProductos={setProductos}/>
       <Footer />
     </>

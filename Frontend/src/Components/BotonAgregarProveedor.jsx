@@ -17,7 +17,9 @@ export const BotonAgregarProveedor = () => {
   //estado que contiene los valores almacenados en un objecto
   const initialState = {
     nombre: '',
-    apellido: '',
+    telefono: '',
+    email: '',
+    direccion: '',
     cuit: ''
   }
   const [datos, setDatos] = useState (initialState);
@@ -38,7 +40,9 @@ export const BotonAgregarProveedor = () => {
       try {
           const res = await axios.post(URL_POST_PROVEEDOR,{
               Nombre: datos.nombre,
-              Apellido: datos.apellido,
+              Telefono: datos.telefono,
+              Email: datos.email,
+              Direccion: datos.direccion,
               CUIT: datos.cuit,
               
           })
@@ -72,13 +76,17 @@ export const BotonAgregarProveedor = () => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control type="text" name='nombre' onChange={handleChange} required />
             </Form.Group>
-            <Form.Group controlId="apellido" className='mb-3'>
-              <Form.Label>Apellido</Form.Label>
-              <Form.Control type="text" name='apellido' onChange={handleChange} required />
+            <Form.Group controlId="telefono" className='mb-3'>
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control type="text" name='telefono' onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="email" className='mb-3'>
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" name='email' onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="cuit" className='mb-3'>
-              <Form.Label>Cuit</Form.Label>
-              <Form.Control type="number" name='cuit' onChange={handleChange} required />
+              <Form.Label>CUIT</Form.Label>
+              <Form.Control type="text" name='cuit' onChange={handleChange} required />
             </Form.Group>       
             <Button type='submit'>Agregar Proveedor</Button>
           </Form>

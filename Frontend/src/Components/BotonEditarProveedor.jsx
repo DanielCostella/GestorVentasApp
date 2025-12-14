@@ -8,7 +8,7 @@ import { FaPenClip } from "react-icons/fa6";
 import Swal from 'sweetalert2'
 
 //componete editarproovedor que recibe datos por props
-export const BotonEditarProveedor = ({id, nombre, apellido}) => {
+export const BotonEditarProveedor = ({id}) => {
   const { register, handleSubmit } = useForm()
 
   //haciendo uso del hook navigate
@@ -35,7 +35,7 @@ export const BotonEditarProveedor = ({id, nombre, apellido}) => {
   //por medio del envio del formulario confirma si se quieren editar los datos
   const handleSubmitForm = (data) => {
     Swal.fire({
-      title: `¿Estás seguro de que quieres editar a ${nombre} ${apellido}?`,
+      title: `¿Estás seguro de que quieres editar este proveedor?`,
       icon: "question",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -47,7 +47,9 @@ export const BotonEditarProveedor = ({id, nombre, apellido}) => {
         try {
           const res = await axios.put(URL_PUT_PROVEEDOR + id, {
             Nombre: data.nombre,
-            Apellido: data.apellido,
+            Telefono: data.telefono,
+            Email: data.email,
+            Direccion: data.direccion,
             CUIT: data.CUIT
           })
     
@@ -85,13 +87,17 @@ export const BotonEditarProveedor = ({id, nombre, apellido}) => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control defaultValue={proveedorEspecifico.Nombre} {...register("nombre")}  type="text"/>
             </Form.Group>
-            <Form.Group controlId="ape" className='mb-3'>
-              <Form.Label>Apellido</Form.Label>
-              <Form.Control defaultValue={proveedorEspecifico.Apellido} {...register("apellido")} name='apellido' type="text" />
+            <Form.Group controlId="telefono" className='mb-3'>
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control defaultValue={proveedorEspecifico.Telefono} {...register("telefono")} type="text" />
+            </Form.Group>
+            <Form.Group controlId="email" className='mb-3'>
+              <Form.Label>Email</Form.Label>
+              <Form.Control defaultValue={proveedorEspecifico.Email} {...register("email")} type="email" />
             </Form.Group>
             <Form.Group controlId="cuit" className='mb-3'>
-              <Form.Label>Cuit</Form.Label>
-              <Form.Control defaultValue={proveedorEspecifico.CUIT} {...register("CUIT")} name='CUIT' type='number'/>
+              <Form.Label>CUIT</Form.Label>
+              <Form.Control defaultValue={proveedorEspecifico.CUIT} {...register("CUIT")} type='text'/>
             </Form.Group>
             <Button type="submit">Editar</Button>
           </Form>

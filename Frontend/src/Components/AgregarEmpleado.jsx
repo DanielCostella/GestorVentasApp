@@ -14,7 +14,8 @@ export const AgregarEmpleado = () => {
         nombre: '',
         apellido: '',
         usuario: '',
-        password: ''
+        password: '',
+        rol: 'Empleado'
     }
 
     const [datos, setDatos] = useState(initialState)
@@ -33,7 +34,8 @@ export const AgregarEmpleado = () => {
                 Nombre: datos.nombre,
                 Apellido: datos.apellido,
                 Usuario: datos.usuario,
-                Password: datos.password
+                Password: datos.password,
+                Rol: datos.rol
             })
             
             if(res.data.status === 200){
@@ -73,9 +75,16 @@ export const AgregarEmpleado = () => {
                 <Form.Label className='datosSession'>Usuario</Form.Label>
                 <Form.Control className="loginInputSession" type="text" name='usuario' placeholder='Ingrese un nombre de usuario' onChange={handleChange} required/>
             </Form.Group>
-            <Form.Group controlId="password">
+            <Form.Group controlId="password" className='mb-3'>
                 <Form.Label className='datosSession'>Contraseña</Form.Label>
                 <Form.Control className="loginInputSession" type="password" name='password' placeholder='Ingrese una contraseña' onChange={handleChange} required/>
+            </Form.Group>
+            <Form.Group controlId="rol" className='mb-3'>
+                <Form.Label className='datosSession'>Rol</Form.Label>
+                <Form.Select className="loginInputSession" name='rol' onChange={handleChange} value={datos.rol} required>
+                    <option value="Empleado">Empleado</option>
+                    <option value="Administrador">Administrador</option>
+                </Form.Select>
             </Form.Group>
             <Form.Group>
                 <Button className='mt-2 mb-2 botonSession' type="submit">Registrarse</Button>
