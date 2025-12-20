@@ -106,10 +106,12 @@ Backend:
 
 ### 🗄️ Estructura de Base de Datos Sugerida
 
+> **⚠️ Nota de Seguridad:** Para sistemas médicos, se recomienda usar UUIDs en lugar de AUTO_INCREMENT para prevenir ataques de enumeración y proteger la privacidad de los pacientes.
+
 ```sql
 -- Pacientes
 CREATE TABLE pacientes (
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  id CHAR(36) PRIMARY KEY, -- UUID para mayor seguridad
   nombre VARCHAR(100),
   apellido VARCHAR(100),
   dni VARCHAR(20) UNIQUE,
@@ -126,9 +128,9 @@ CREATE TABLE pacientes (
 
 -- Turnos/Citas
 CREATE TABLE turnos (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  paciente_id INT,
-  medico_id INT,
+  id CHAR(36) PRIMARY KEY, -- UUID
+  paciente_id CHAR(36),
+  medico_id CHAR(36),
   fecha_hora DATETIME,
   duracion INT DEFAULT 30, -- minutos
   motivo TEXT,
@@ -140,9 +142,9 @@ CREATE TABLE turnos (
 
 -- Historia Clínica
 CREATE TABLE consultas (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  paciente_id INT,
-  medico_id INT,
+  id CHAR(36) PRIMARY KEY, -- UUID
+  paciente_id CHAR(36),
+  medico_id CHAR(36),
   fecha_consulta DATETIME,
   motivo_consulta TEXT,
   diagnostico TEXT,
@@ -155,7 +157,7 @@ CREATE TABLE consultas (
 
 -- Médicos
 CREATE TABLE medicos (
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  id CHAR(36) PRIMARY KEY, -- UUID
   nombre VARCHAR(100),
   apellido VARCHAR(100),
   matricula VARCHAR(50) UNIQUE,
@@ -166,8 +168,8 @@ CREATE TABLE medicos (
 
 -- Recetas
 CREATE TABLE recetas (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  consulta_id INT,
+  id CHAR(36) PRIMARY KEY, -- UUID
+  consulta_id CHAR(36),
   medicamento VARCHAR(200),
   dosis VARCHAR(100),
   frecuencia VARCHAR(100),
@@ -175,6 +177,20 @@ CREATE TABLE recetas (
   indicaciones TEXT,
   FOREIGN KEY (consulta_id) REFERENCES consultas(id)
 );
+```
+
+**Ejemplo de generación de UUIDs en JavaScript:**
+```javascript
+// Backend - Node.js
+const { v4: uuidv4 } = require('uuid');
+
+// Al crear un nuevo paciente
+const nuevoPaciente = {
+  id: uuidv4(), // genera: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+  nombre: "Juan",
+  apellido: "Pérez",
+  // ... otros campos
+};
 ```
 
 ---
@@ -265,6 +281,7 @@ CREATE TABLE auditoria_accesos (
 ### Librerías Útiles
 ```json
 {
+  "uuid": "Generación de identificadores únicos seguros",
   "fullcalendar/react": "Calendario de turnos",
   "react-pdf": "Generación de recetas/informes PDF",
   "recharts": "Gráficos de evolución de pacientes",
@@ -372,7 +389,7 @@ Este repositorio (**GestorVentasApp**) NO es adecuado para consultorio médico. 
 
 ---
 
-**Última actualización:** Diciembre 2025
+**Última actualización:** Diciembre 2024
 **Autor:** Daniel Costella
 **Licencia:** MIT - Documento de orientación gratuito
 
