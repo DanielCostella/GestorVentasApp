@@ -7,6 +7,9 @@
 [![Zustand](https://img.shields.io/badge/Zustand-State-orange)](https://github.com/pmndrs/zustand)
 [![React Query](https://img.shields.io/badge/React_Query-Cache-FF4154)](https://tanstack.com/query/latest)
 
+> **⚠️ Nota Importante:** Este es un sistema para **restaurantes/rotiserías**, NO para consultorios médicos.  
+> **¿Buscas un sistema médico?** → [Ver recomendaciones aquí](./RECOMENDACIONES-CONSULTORIO-MEDICO.md)
+
 ---
 
 ## 📋 Sobre el Proyecto
@@ -198,6 +201,23 @@ const { data, isLoading } = useProductos()
 3. Commit tus cambios (`git commit -m 'Add: nueva funcionalidad'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
+
+---
+
+## 🎯 Casos de Uso
+
+### ✅ Este sistema ES ideal para:
+- Restaurantes y rotiserías
+- Cafeterías y bares
+- Negocios de comida rápida
+- Panaderías y pastelerías
+- Cualquier negocio gastronómico con ventas y control de stock
+
+### ❌ Este sistema NO es para:
+- Consultorios médicos o clínicas → [Ver alternativas](./RECOMENDACIONES-CONSULTORIO-MEDICO.md)
+- Farmacias (requiere control de medicamentos regulados)
+- Veterinarias (requiere historia clínica veterinaria)
+- Tiendas de retail complejas (mejor usar sistemas especializados)
 
 ---
 
